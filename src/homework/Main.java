@@ -1,9 +1,6 @@
 package homework;
 
-import java.util.function.BiFunction;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
+import java.util.function.*;
 
 public class Main {
     /*
@@ -38,6 +35,14 @@ public class Main {
         UnaryOperator <String> intoTheStars = a -> a.length()==4 ? "****" : a;
         System.out.println(intoTheStars.apply("abcd"));
         System.out.println(intoTheStars.apply("ab"));
+
+        //Printable printable = s -> System.out.println("!" + s + "!");
+        Consumer<String> tramsform1 = s -> System.out.println("!" + s + "!");
+        tramsform1.accept("Hello");
+
+        //Producable producable = () -> "Hello World";
+        Supplier<String> supplier = () -> "Hello World";
+        System.out.println(supplier.get());
 
 
     }
